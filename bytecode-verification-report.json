@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Validators",
+    "hasPush0": false,
+    "suspicious": false,
+    "push0Locations": [],
+    "suspiciousLocations": [],
+    "bytecodeSize": 22472,
+    "deployedSize": 22439
+  },
+  {
+    "name": "Slash",
+    "hasPush0": false,
+    "suspicious": false,
+    "push0Locations": [],
+    "suspiciousLocations": [],
+    "bytecodeSize": 5922,
+    "deployedSize": 5890
+  },
+  {
+    "name": "System",
+    "hasPush0": false,
+    "suspicious": false,
+    "push0Locations": [],
+    "suspiciousLocations": [],
+    "bytecodeSize": 0,
+    "deployedSize": 0
+  }
+]

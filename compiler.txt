@@ -1,0 +1,18 @@
+# ambil runtime bytecode
+solc --bin-runtime --abi --overwrite /mnt/volume_nyc3_01/oxt-contract/contracts/Slash.sol -o bytecode 
+solc --bin-runtime --abi /mnt/volume_nyc3_01/oxt-contract/contracts/Validators.sol -o bytecode
+
+solc --bin-runtime --abi \
+  --base-path . \
+  --include-path node_modules \
+  --via-ir \
+  --optimize --optimize-runs 200 \
+  contracts/Validators.sol \
+  -o bytecode
+
+solc --bin-runtime --abi \
+  --base-path . \
+  --include-path node_modules \
+  --optimize --optimize-runs 200 \
+  contracts/Validators.sol \
+  -o bytecode

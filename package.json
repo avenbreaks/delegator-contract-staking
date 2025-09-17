@@ -1,0 +1,53 @@
+{
+  "name": "csc_genesis_contract",
+  "version": "1.0.0",
+  "description": "csc(coinex smart chain) system contracts",
+  "main": "generate-contracts.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "truffle test",
+    "hardhat:compile": "hardhat compile",
+    "hardhat:test": "hardhat test --network hardhat",
+    "hardhat:test:gas": "REPORT_GAS=true hardhat test --network hardhat",
+    "hardhat:node": "hardhat node",
+    "hardhat:deploy:local": "hardhat run scripts/deploy.js --network localhost",
+    "hardhat:deploy:oxt": "hardhat run scripts/deploy.js --network oxt",
+    "hardhat:verify:oxt": "hardhat run scripts/verify.js --network oxt",
+    "hardhat:interact:local": "hardhat run scripts/interact.js --network localhost",
+    "hardhat:interact:oxt": "hardhat run scripts/interact.js --network oxt",
+    "foundry:test": "cd . && forge test",
+    "foundry:build": "cd . && forge build",
+    "migrate:truffle-to-hardhat": "echo 'Truffle to Hardhat migration complete. Use hardhat: scripts instead of truffle commands.'"
+  },
+  "author": "developer@coinex.org",
+  "license": "ISC",
+  "dependencies": {
+    "@openzeppelin/contracts-upgradeable": "^5.4.0",
+    "@openzeppelin/test-helpers": "^0.5.10",
+    "ganache-cli": "^6.12.2",
+    "nunjucks": "^3.2.3",
+    "truffle": "^5.11.5"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^2.1.0",
+    "@nomicfoundation/hardhat-ethers": "^3.1.0",
+    "@nomicfoundation/hardhat-ignition-ethers": "^0.15.14",
+    "@nomicfoundation/hardhat-network-helpers": "^1.1.0",
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@nomicfoundation/hardhat-verify": "^2.1.1",
+    "@openzeppelin/contracts": "^4.9.6",
+    "@typechain/ethers-v6": "^0.5.1",
+    "@typechain/hardhat": "^9.1.0",
+    "@types/chai": "^4.3.20",
+    "@types/mocha": "^10.0.10",
+    "ethers": "^6.15.0",
+    "hardhat": "^2.26.3",
+    "hardhat-gas-reporter": "^1.0.10",
+    "solidity-coverage": "^0.8.16",
+    "ts-node": "^10.9.2",
+    "typechain": "^8.3.2",
+    "typescript": "^5.9.2"
+  }
+}
