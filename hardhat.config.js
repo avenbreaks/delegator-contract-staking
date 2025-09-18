@@ -1,82 +1,107 @@
 require("@nomicfoundation/hardhat-toolbox");
+require("dotenv").config();
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
     solidity: {
-        version: "0.8.19", // CRITICAL: Use 0.8.19, NOT 0.8.20
+        version: "0.8.19",
         settings: {
             optimizer: {
                 enabled: true,
-                runs: 200, // Lower runs for smaller bytecode
-                details: {
-                    yul: true,
-                    yulDetails: {
-                        stackAllocation: true,
-                        optimizerSteps: "dhfoDgvulfnTUtnIf"
-                    }
-                }
+                runs: 50,
             },
-            evmVersion: "istanbul", // IMPORTANT: Target Istanbul EVM
+            evmVersion: "istanbul",
             metadata: {
-                bytecodeHash: "none" // Reduce bytecode size
+                bytecodeHash: "none"
             }
         }
-    }, networks: {
-        hardhat: {
-            accounts: {
-                count: 10,
-                accountsBalance: "10000000000000000000000" // 10,000 ETH per account
-            }
-        },
-        localhost: {
-            url: "http://127.0.0.1:8545",
-            chainId: 1337,
-            gasPrice: 20000000000,
-            gas: 30000000
-        },
-        oxt: {
+    },
+    networks: {
+        oorthnexus: {
             url: "https://rpc-data.oorthnexus.xyz",
-            chainId: 982025,
+        },
+        sepolia: {
+            url: process.env.SEPOLIA_RPC_URL || "https://ethereum-sepolia-rpc.publicnode.com",
             accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
-            gas: 6721975,
-            gasPrice: 20000000000,
-        }
+            chainId: 11155111,
+            gas: "auto",
+            gasPrice: "auto",
+            timeout: 60000,
+        },
+        "base-sepolia": {
+            url: process.env.BASE_SEPOLIA_RPC_URL || "https://sepolia.base.org",
+            accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
+            chainId: 84532,
+            gas: "auto",
+            gasPrice: "auto",
+            timeout: 60000,
+        },
+        "optimism-sepolia": {
+            url: process.env.OPTIMISM_SEPOLIA_RPC_URL || "https://sepolia.optimism.io",
+            accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
+            chainId: 11155420,
+            gas: "auto",
+            gasPrice: "auto",
+            timeout: 60000,
+        },
+        "arbitrum-sepolia": {
+            url: process.env.ARBITRUM_SEPOLIA_RPC_URL || "https://sepolia-rollup.arbitrum.io/rpc",
+            accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
+            chainId: 421614,
+            gasPrice: "auto",
+            gas: "auto",
+        },
     },
     etherscan: {
         apiKey: {
-            oxt: 'process.env.ETHERSCAN_API_KEY'
+            oorthnexus: 'empty',
+            sepolia: process.env.ETHERSCAN_API_KEY,
+            "base-sepolia": process.env.BASESCAN_API_KEY,
+            "optimism-sepolia": process.env.OPTIMISM_API_KEY,
+            "arbitrum-sepolia": process.env.ARBISCAN_API_KEY,
         },
         customChains: [
             {
-                network: "oxt",
+                network: "base-sepolia",
+                chainId: 84532,
+                urls: {
+                    apiURL: "https://api-sepolia.basescan.org/api",
+                    browserURL: "https://sepolia.basescan.org"
+                }
+            },
+            {
+                network: "optimism-sepolia",
+                chainId: 11155420,
+                urls: {
+                    apiURL: "https://api-sepolia-optimistic.etherscan.io/api",
+                    browserURL: "https://sepolia-optimism.etherscan.io"
+                }
+            },
+            {
+                network: "oorthnexus",
                 chainId: 982025,
                 urls: {
                     apiURL: "https://explorer.oorthnexus.xyz/api",
                     browserURL: "https://explorer.oorthnexus.xyz"
                 }
+            },
+            {
+                network: "arbitrum-sepolia",
+                chainId: 421614,
+                urls: {
+                    apiURL: "https://api-sepolia.arbiscan.io/api",
+                    browserURL: "https://sepolia.arbiscan.io"
+                }
             }
-        ],
+        ]
     },
-
-    // Gas reporter configuration
     gasReporter: {
-        enabled: process.env.REPORT_GAS === "true",
+        enabled: process.env.REPORT_GAS !== true,
         currency: "USD",
         gasPrice: 20,
-        outputFile: "gas-report.txt",
-        noColors: true
+        coinmarketcap: process.env.COINMARKETCAP_API_KEY,
     },
-
-    // Path configurations to match current structure
-    paths: {
-        sources: "./contracts",
-        tests: "./test",
-        cache: "./cache",
-        artifacts: "./artifacts"
-    },
-
-    // Mocha timeout
     mocha: {
-        timeout: 100000
-    }
+        timeout: 60000, // 60 seconds
+    },
 };

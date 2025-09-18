@@ -1,0 +1,130 @@
+[
+  {
+    "network": "arbitrum-sepolia",
+    "chainId": "421614",
+    "contract": "Validators",
+    "address": "0x0E37872A715bE33690ac529ef9BF02b707aaA5b7",
+    "matches": {
+      "compiled": true,
+      "expected": false,
+      "compiledVsExpected": false
+    },
+    "sizes": {
+      "onchain": 21912,
+      "compiled": 21912,
+      "expected": 20654
+    }
+  },
+  {
+    "network": "arbitrum-sepolia",
+    "chainId": "421614",
+    "contract": "Slash",
+    "address": "0xDb51647fD9b2A3F438BD73C6a59fEF7100e061ED",
+    "matches": {
+      "compiled": true,
+      "expected": false,
+      "compiledVsExpected": false
+    },
+    "sizes": {
+      "onchain": 5890,
+      "compiled": 5890,
+      "expected": 5318
+    }
+  },
+  {
+    "network": "base-sepolia",
+    "chainId": "84532",
+    "contract": "Validators",
+    "address": "0x1468050631540Ea30a346E48A24DE4d6512792ed",
+    "matches": {
+      "compiled": true,
+      "expected": false,
+      "compiledVsExpected": false
+    },
+    "sizes": {
+      "onchain": 21912,
+      "compiled": 21912,
+      "expected": 20654
+    }
+  },
+  {
+    "network": "base-sepolia",
+    "chainId": "84532",
+    "contract": "Slash",
+    "address": "0x6e308d806DfF63aE35Eb411c15229a2CD4091eFc",
+    "matches": {
+      "compiled": true,
+      "expected": false,
+      "compiledVsExpected": false
+    },
+    "sizes": {
+      "onchain": 5890,
+      "compiled": 5890,
+      "expected": 5318
+    }
+  },
+  {
+    "network": "optimism-sepolia",
+    "chainId": "11155420",
+    "contract": "Validators",
+    "address": "0x1534A3dd99ec4D748C09921081f5C63879BDFe29",
+    "matches": {
+      "compiled": true,
+      "expected": false,
+      "compiledVsExpected": false
+    },
+    "sizes": {
+      "onchain": 21912,
+      "compiled": 21912,
+      "expected": 20654
+    }
+  },
+  {
+    "network": "optimism-sepolia",
+    "chainId": "11155420",
+    "contract": "Slash",
+    "address": "0xC01817E1688b267313A94a941E84D57Ec6b59E59",
+    "matches": {
+      "compiled": true,
+      "expected": false,
+      "compiledVsExpected": false
+    },
+    "sizes": {
+      "onchain": 5890,
+      "compiled": 5890,
+      "expected": 5318
+    }
+  },
+  {
+    "network": "sepolia",
+    "chainId": "11155111",
+    "contract": "Validators",
+    "address": "0x5a208E4777731412ce4b617b7F417Cf77ad8edc0",
+    "matches": {
+      "compiled": true,
+      "expected": false,
+      "compiledVsExpected": false
+    },
+    "sizes": {
+      "onchain": 21912,
+      "compiled": 21912,
+      "expected": 20654
+    }
+  },
+  {
+    "network": "sepolia",
+    "chainId": "11155111",
+    "contract": "Slash",
+    "address": "0xaCF90923b60Bd009C39490d2cD071Cee95d93cD5",
+    "matches": {
+      "compiled": true,
+      "expected": false,
+      "compiledVsExpected": false
+    },
+    "sizes": {
+      "onchain": 5890,
+      "compiled": 5890,
+      "expected": 5318
+    }
+  }
+]

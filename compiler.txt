@@ -4,15 +4,35 @@ solc --bin-runtime --abi /mnt/volume_nyc3_01/oxt-contract/contracts/Validators.s
 
 solc --bin-runtime --abi \
   --base-path . \
-  --include-path node_modules \
-  --via-ir \
-  --optimize --optimize-runs 200 \
+  --optimize \
+  --optimize-runs 50 \
+  --overwrite \
+  --evm-version istanbul \
+  --metadata-hash none \
   contracts/Validators.sol \
   -o bytecode
 
 solc --bin-runtime --abi \
   --base-path . \
-  --include-path node_modules \
-  --optimize --optimize-runs 200 \
-  contracts/Validators.sol \
+  --optimize \
+  --optimize-runs 50 \
+  --evm-version istanbul \
+  --metadata-hash none \
+  contracts/Slash.sol \
   -o bytecode
+
+# 1. Check pending rewards untuk delegator
+cast call 0x0000000000000000000000000000000000001000 "getPendingDelegatorRewards(address,address)" $DELEGATOR_ADDRESS $VALIDATOR_ADDRESS --rpc-url http://127.0.0.1:8545
+
+# 2. Claim rewards
+cast send $VALIDATOR_CONTRACT "claimDelegatorRewards(address)" $VALIDATOR_ADDRESS --from $DELEGATOR_ADDRESS --rpc-url http://127.0.0.1:8545
+
+# 3. Check total pending across all validators
+cast call $VALIDATOR_CONTRACT "getTotalPendingRewards(address)" 0x3e2aa6bc40400e74224353ee1e804313bb9144f4 --rpc-url http://127.0.0.1:8545
+
+# 4. Batch claim from multiple validators
+cast send $VALIDATOR_CONTRACT "batchClaimRewards(address[])" "[$VALIDATOR1,$VALIDATOR2]" --from $DELEGATOR_ADDRESS --rpc-url http://127.0.0.1:
+
+
+npx hardhat verify \
+  --network oxt 0x0000000000000000000000000000000000001000 

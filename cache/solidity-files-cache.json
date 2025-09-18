@@ -10,14 +10,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200,
-            "details": {
-              "yul": true,
-              "yulDetails": {
-                "stackAllocation": true,
-                "optimizerSteps": "dhfoDgvulfnTUtnIf"
-              }
-            }
+            "runs": 50
           },
           "evmVersion": "istanbul",
           "metadata": {
@@ -50,52 +43,6 @@
         "Slash"
       ]
     },
-    "/mnt/volume_nyc3_01/oxt-contract/contracts/interfaces/IValidators.sol": {
-      "lastModificationDate": 1758097277411,
-      "contentHash": "01bd4861538ada7ab1a72e1a9f82dc3e",
-      "sourceName": "contracts/interfaces/IValidators.sol",
-      "solcConfig": {
-        "version": "0.8.19",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200,
-            "details": {
-              "yul": true,
-              "yulDetails": {
-                "stackAllocation": true,
-                "optimizerSteps": "dhfoDgvulfnTUtnIf"
-              }
-            }
-          },
-          "evmVersion": "istanbul",
-          "metadata": {
-            "bytecodeHash": "none"
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "0.8.19"
-      ],
-      "artifacts": [
-        "IValidators"
-      ]
-    },
     "/mnt/volume_nyc3_01/oxt-contract/contracts/System.sol": {
       "lastModificationDate": 1758097233922,
       "contentHash": "743a8f6e39078a1990e184df3c08c24c",
@@ -105,14 +52,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200,
-            "details": {
-              "yul": true,
-              "yulDetails": {
-                "stackAllocation": true,
-                "optimizerSteps": "dhfoDgvulfnTUtnIf"
-              }
-            }
+            "runs": 50
           },
           "evmVersion": "istanbul",
           "metadata": {
@@ -142,23 +82,55 @@
         "System"
       ]
     },
+    "/mnt/volume_nyc3_01/oxt-contract/contracts/interfaces/IValidators.sol": {
+      "lastModificationDate": 1758097277411,
+      "contentHash": "01bd4861538ada7ab1a72e1a9f82dc3e",
+      "sourceName": "contracts/interfaces/IValidators.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 50
+          },
+          "evmVersion": "istanbul",
+          "metadata": {
+            "bytecodeHash": "none"
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.19"
+      ],
+      "artifacts": [
+        "IValidators"
+      ]
+    },
     "/mnt/volume_nyc3_01/oxt-contract/contracts/Validators.sol": {
-      "lastModificationDate": 1758097178350,
-      "contentHash": "b6ecdff0142e313b9edc1d3b6f3ea535",
+      "lastModificationDate": 1758199267156,
+      "contentHash": "ba8bb31f8b52f500a749d76a4101d96f",
       "sourceName": "contracts/Validators.sol",
       "solcConfig": {
         "version": "0.8.19",
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200,
-            "details": {
-              "yul": true,
-              "yulDetails": {
-                "stackAllocation": true,
-                "optimizerSteps": "dhfoDgvulfnTUtnIf"
-              }
-            }
+            "runs": 50
           },
           "evmVersion": "istanbul",
           "metadata": {
@@ -200,14 +172,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200,
-            "details": {
-              "yul": true,
-              "yulDetails": {
-                "stackAllocation": true,
-                "optimizerSteps": "dhfoDgvulfnTUtnIf"
-              }
-            }
+            "runs": 50
           },
           "evmVersion": "istanbul",
           "metadata": {
